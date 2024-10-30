@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS purchase_history CASCADE;
 DROP TABLE IF EXISTS shopping_cart CASCADE;
 DROP TABLE IF EXISTS member CASCADE;
 
-CREATE TABLE goods
+CREATE TABLE IF NOT EXISTS goods
 (
     goods_code       	INT AUTO_INCREMENT PRIMARY KEY COMMENT '상품코드',
     goods_name      	VARCHAR(100) NOT NULL COMMENT '상품명',
@@ -153,7 +153,7 @@ INSERT INTO goods (goods_code , goods_name , goods_discount , number_products , 
 (null , 'LH 볼캡 (ivory)', '36000' , '200' , '57000' , 'HEADWEAR'),
 (null , 'RV 볼캡 (black) ', '48000' , '200' , '62000' , 'HEADWEAR');
 
-CREATE TABLE member
+CREATE TABLE IF NOT EXISTS member
 (
 	member_number   			INT AUTO_INCREMENT PRIMARY KEY COMMENT'회원번호',
     member_id                   	VARCHAR(100) NOT NULL COMMENT '아이디',
@@ -167,10 +167,6 @@ CREATE TABLE member
 INSERT INTO member (member_number, member_id, phone_number, default_delivery_address, email, member_password, alias) VALUES 
 (null , 'user01' , '010-1234-5678' , '경기도 하남시 미사 뭐시시시' , 'opdnjseo@naver.com' , 'rkd162316' , 'opdnjseo'),
 (null , 'user02' , '010-1234-6547' , '경기도 하남시 미사아파트' , 'user02@naver.com' , 'chlrkddnjseo' , 'dnjseo');
-
-
-
-
 
 CREATE TABLE IF NOT EXISTS inquiry
 (
@@ -188,9 +184,6 @@ INSERT INTO inquiry (inquiry_number , member_number , goods_code , inquiry_conte
 (null , 2 , 2, '문의희망');
 
 
-
-
-
 CREATE TABLE IF NOT EXISTS orders
 (
     order_number      		INT NOT NULL COMMENT '주문번호',
@@ -205,9 +198,6 @@ INSERT INTO orders (order_number , final_payment , order_date , ordered_product)
 (2 , 64200 , 20241030, 'OD 오버핏 후드 집업 (gray)' );
 
 
-
-
-
 CREATE TABLE IF NOT EXISTS delivery
 (
 delivery_status      VARCHAR(20) NOT NULL COMMENT '배송현황',
@@ -215,7 +205,7 @@ delivery_fee         INT NOT NULL COMMENT '배송비',
 order_number         INT NOT NULL COMMENT '주문번호',
 delivery_member_number   	 INT NOT NULL COMMENT '회원번호',
 delivery_address     VARCHAR(20) NOT NULL COMMENT '배송지',
-	CONSTRAINT pk_delivery_status PRIMARY KEY(delivery_status),
+	CONSTRAINT pk_order_number PRIMARY KEY(order_number),
     CONSTRAINT fk_order_number FOREIGN KEY (order_number) REFERENCES orders (order_number) ON DELETE CASCADE,		
 	CONSTRAINT fk_delivery_member_number FOREIGN KEY (delivery_member_number) REFERENCES member (member_number) ON DELETE CASCADE
 )ENGINE=INNODB COMMENT = '배송';
@@ -226,19 +216,16 @@ delivery_address     VARCHAR(20) NOT NULL COMMENT '배송지',
  ('배송완료' , 3000 , 1 , 1 , '경기도 하남시 미사아파트');
 
 
- 
- -- 여기 까지 완료 
-
 CREATE TABLE IF NOT EXISTS purchase_history
 (
-purchase_history_number				INT AUTO_INCREMENT COMMENT '구매내역번호',
+purchase_history_number				 INT AUTO_INCREMENT COMMENT '구매내역번호',
 purchase_order_number         		 INT NOT NULL COMMENT '주문번호',
-purchase_goods_code           		 VARCHAR(30)NOT NULL COMMENT '상품코드',
+purchase_goods_code           		 INT NOT NULL COMMENT '상품코드',
 purchase_member_number    			 INT NOT NULL COMMENT '회원번호',
-	CONSTRAINT pk_purchase_history_number PRIMARY KEY(purchase_history_number),
-	CONSTRAINT fk_purchase_order_number  FOREIGN KEY (purchase_order_number)  REFERENCES orders (order_number)  ON DELETE CASCADE,
-	CONSTRAINT fk_purchase_goods_code	 FOREIGN KEY (purchase_goods_code) 	  REFERENCES goods  (goods_code)    ON DELETE CASCADE,
-	CONSTRAINT fk_purchase_member_number FOREIGN KEY (purchase_member_number) REFERENCES member (member_number) ON DELETE CASCADE
+	CONSTRAINT pk_purchase_history_number PRIMARY KEY (purchase_history_number),
+	CONSTRAINT fk_purchase_order_number   FOREIGN KEY (purchase_order_number)  REFERENCES orders (order_number)  ON DELETE CASCADE,
+	CONSTRAINT fk_purchase_goods_code	  FOREIGN KEY (purchase_goods_code)    REFERENCES goods  (goods_code)    ON DELETE CASCADE,
+	CONSTRAINT fk_purchase_member_number  FOREIGN KEY (purchase_member_number) REFERENCES member (member_number) ON DELETE CASCADE
 ) ENGINE=INNODB COMMENT = '구매내역';	
 
 INSERT INTO purchase_history(purchase_order_number , purchase_goods_code , purchase_member_number)VALUES
@@ -246,12 +233,13 @@ INSERT INTO purchase_history(purchase_order_number , purchase_goods_code , purch
 
 CREATE TABLE IF NOT EXISTS shopping_cart
 (
-			   shopping_cart_number   	INT NOT NULL COMMENT '장바구니 번호',
-			   member_number      		 INT NOT NULL COMMENT '회원번호',
-               goods_code          		 VARCHAR(30)NOT NULL COMMENT '상품코드',
-    CONSTRAINT pk_shopping_cart_number 	 PRIMARY KEY(shopping_cart_number),
-    CONSTRAINT fk_shopping_member_number FOREIGN KEY (shopping_member_number) REFERENCES member (member_number) ON DELETE CASCADE,		
-	CONSTRAINT fk_shopping_goods_code 	 FOREIGN KEY (shopping_goods_code) 	  REFERENCES goods  (goods_code) 	ON DELETE CASCADE
+			   shopping_cart_number   	  INT AUTO_INCREMENT COMMENT '장바구니 번호',
+			   member_number     INT NOT NULL COMMENT '회원번호',
+			   goods_code        INT NOT NULL COMMENT '상품코드',
+	CONSTRAINT pk_shopping_cart_number 	 PRIMARY KEY (shopping_cart_number),
+    CONSTRAINT fk_shopping_member_number FOREIGN KEY (member_number) REFERENCES member (member_number) ON DELETE CASCADE,	
+	CONSTRAINT fk_shopping_goods_code 	 FOREIGN KEY (goods_code) 	  REFERENCES goods  (goods_code) 	 ON DELETE CASCADE
 ) ENGINE=INNODB COMMENT = '장바구니';
 
-DESCRIBE inquiry;
+INSERT INTO shopping_cart(shopping_cart_number , member_number , goods_code)VALUES
+(1 , 1 , 1);
