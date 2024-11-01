@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vveloce</title>
+</head>
+<style>
+/* 상단  */
+.loginbox1{
+position: absolute;
+width: 100%;
+height: 54px;
+left: 0px;
+top: 0px;
+background: #373232;
+z-index: 3;
+}
+/* 하단 */
+.loginbox2{
+position: absolute;
+width: 100% ;
+height: 36px;
+left: 0px;
+top: 917px;
+background: #000000;
+z-index: 1;
+}
+.loginbox{
+    display: flex;
+    box-sizing: border-box;
+    position: absolute;
+    width: 32%;
+    height: 70%;
+    left: 640px;
+    top: 155px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1.5px solid #D9D9D9;
+    z-index: 3;
+}
+/* 상단 로고  */
+.img{
+   position: absolute;
+    margin-left: 900px;
+    margin-top:  -25px;
+    z-index: 4;
+}
+/* 검색창  */
+.search{
+display: flex;
+box-sizing: border-box;
+position: relative;
+width: 22%;
+height: 28px;
+left: 1450px;
+top: 5px;
+background: #ffffff;
+border: 1px solid #ffffff;
+border-radius: 16px;
+text-align: center;
+z-index: 4;
+}
+.REGISTER{
+display: flex;
+justify-content: center;
+background-size: auto;
+aspect-ratio: 21/10;
+ z-index: -1; 
+}
+.box{
+box-sizing: border-box;
+position: absolute;
+width: 541px;
+height: 800px;
+left: 680px;
+top: 85px;
+background: rgba(255, 255, 255, 0.8);
+border: 2px solid #D9D9D9;
+z-index: 2;
+}
+#text1{
+position: absolute;
+width: 96px;
+height: 29px;
+left: 720px;
+top: 90px;
+font-size: 23px;
+z-index: 3;
+}
+#textid{
+position: absolute;
+width: 56px;
+height: 24px;
+left: 729px;
+top: 200px;
+z-index: 3;
+font-size: 18px;
+}
+input[type="idbox"]{
+    position: relative;
+    left: 720px;
+    top: -710px;
+    box-sizing: border-box;
+    width: 450px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    font-size: 15px;
+    z-index: 3;
+}
+input[type="pwdbox"]{
+    position: relative;
+    left: 264px;
+    top: -600px;
+    box-sizing: border-box;
+    width: 450px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    font-size: 15px;
+    z-index: 3;
+}
+.Duplicate{
+box-sizing: border-box;
+position: absolute;
+width: 65px;
+height: 25px;
+left: 1110px;
+top: 195px;
+z-index: 3;
+font-size: 12px;
+background: #FFFFFF;
+border: 0.5px solid #000000;
+background: rgba(255, 255, 255, 0.8);
+border-radius: 6px;
+cursor : pointer;
+}
+.Duplicate:active{
+    background-color: #AFAFAF;
+}
+#textpwd{
+position: absolute;
+width: 72px;
+height: 24px;
+left: 729px;
+top: 310px;
+z-index: 3;
+font-size: 18px;
+}
+#text2{
+position: absolute;
+width: 160px;
+height: 16px;
+left: 1025px;
+top: 254px;
+color: #9F9696;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 200;
+font-size: 13px;
+line-height: 16px;
+z-index: 3;
+}
+#text3{
+position: absolute;
+width: 360px;
+height: 16px;
+left: 820px;
+top: 365px;
+color: #9F9696;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 200;
+font-size: 13px;
+line-height: 16px;
+z-index: 3;
+}
+.textpwdok{
+position: absolute;
+width: 115px;
+height: 24px;
+left: 729px;
+top: 410px;
+z-index: 4;
+font-size: 18px;
+}
+input[type="password"]{
+    position: relative;
+    left: -190px;
+    top: -500px;
+    box-sizing: border-box;
+    width: 450px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    font-size: 15px;
+    z-index: 4;
+}
+#textname{
+position: absolute;
+width: 115px;
+height: 24px;
+left: 729px;
+top: 500px;
+z-index: 4;
+font-size: 18px;
+}
+input[type="namebox"]{
+    position: relative;
+    left: -647px;
+    top: -410px;
+    box-sizing: border-box;
+    width: 450px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    font-size: 15px;
+    z-index: 4;
+}
+#mail{
+position: absolute;
+width: 115px;
+height: 24px;
+left: 729px;
+top: 580px;
+z-index: 4;
+font-size: 18px;
+}
+input[type="boxmail"]{
+    position: absolute;
+    left: -600px;
+    top: 20px;
+    box-sizing: border-box;
+    width: 450px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    font-size: 15px;
+    z-index: 3;
+}
+#number{
+position: absolute;
+width: 115px;
+height: 24px;
+left: 729px;
+top: 670px;
+z-index: 4;
+font-size: 18px;
+}
+input[type="box1"]{
+    position: relative;
+    left: 720px;
+    top: -370px;
+    box-sizing: border-box;
+    width: 450px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    font-size: 15px;
+    z-index: 3;
+}
+input[type="numberbox"]{
+    position: relative;
+    left: 265px;
+    top: -280px;
+    box-sizing: border-box;
+    width: 80px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    font-size: 15px;
+    z-index: 3;
+}
+.REGISTERbtn{
+position: relative;
+box-sizing: border-box;
+width: 419px;
+height: 41px;
+left: 20px;
+top: -175px;
+background: #D9D9D9;
+border: 1px solid #AFAFAF;
+font-size: 25px;
+z-index: 4;
+cursor : pointer;
+}
+.REGISTERbtn:active{
+    background-color: #AFAFAF;
+}
+</style>
+<body>
+    
+    
+    <form class="searchbox" action="searchbox">
+        <input class="search" type="text" placeholder="검색어를 입력하세요">
+    </form>
+
+    <div class="img"><img src="img/vveloce 1.png" width="90px"></div>
+    
+    <div class="loginbox1"></div>
+   
+    <div class="loginbox2"></div>
+   
+    <div class="REGISTER"><img src="img/RER.png"></div>
+   
+    <div class="box"></div>
+   
+    <input class="idbox" type="idbox" name="userName" >
+   
+    <input class="pwdbox" type="pwdbox" name="userPassword"/>
+   
+
+    <h3 id="text1">회원가입</h3>
+   
+    <b id="textid">아이디</b>
+   
+    <b class="textpwdok">비밀번호 확인</b>
+   
+    <button class="Duplicate "><b>중복확인</b></button>
+   
+    <b id="textpwd">비밀번호</b>
+   
+    <p id="text2">(영문소문자/숫자, 4~16자)</p>
+    
+    <p id="text3"> (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자)</p>
+   
+
+    <input  type="password" />
+
+    
+    
+    <b id="textname">닉네임</b>
+    <input class="namebox" type="namebox" name="userName" >
+   
+    <b id="mail">이메일</b>
+    <input class="box1" type="box1" name="box1">
+   
+    <b id="number">전화번호</b>
+    <input class="numberbox" type="numberbox" 
+    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+       
+    
+    <input class="numberbox" type="numberbox" name="number">
+         <input class="numberbox" type="numberbox" name="number">
+    <button class="REGISTERbtn">가입하기</button>
+
+
+</body>
+</html>
