@@ -43,20 +43,8 @@
     .fade-img {
         opacity: 0;
     }
-    .logo{
-        position: absolute;
-        top: 20px;                          /* 상단에서 20% 위치 */
-        left: 40px;                        /* 수평 중앙 */
-        width: 3.5vw;                     /* 창 너비 100% */
-        height: 3.5vh;                   /* 창 높이 100% */
-        transform: translate(0);        /* 수평 중앙 정렬 (수직은 고정) */
-        height: auto;                  /* 비율 유지 */
-        z-index: 2;                   /* 텍스트보다 위에 표시 */
-        margin: -0;                  /* 여백 제거 */
-        padding: 0;                 /* 패딩 제거 */
-        overflow: hidden;          /* 넘치는 콘텐츠 숨기기 */
-        cursor : pointer;
-    }
+
+
     /*.conternt-logo{*/
     /*    position: relative;*/
     /*    width: 100vw;                    !* 컨테이너 너비를 창 너비에 맞춤 *!*/
@@ -69,8 +57,8 @@
     }
     .login{
         position: absolute;
-        top: -13px;                 /* 중앙 정렬 */
-        left: 96%;
+        top: 8px;                 /* 중앙 정렬 */
+        left: 88.8%;
         transform: translate(0); /* 수평 중앙 정렬 (수직은 고정) */
         color: rgb(36, 35, 35);
         font-size: 1vw;           /* 창 너비에 따라 텍스트 크기 조정 */
@@ -81,32 +69,29 @@
     }
     .Register{
         position: absolute;
-        top: 10px;                 /* 중앙 정렬 */
-        left: 93.9%;
+        top: 8px;                 /* 중앙 정렬 */
+        left: 93%;
         transform: translate(0); /* 수평 중앙 정렬 (수직은 고정) */
         color: rgb(36, 35, 35);
         font-size: 1vw;           /* 창 너비에 따라 텍스트 크기 조정 */
         cursor : pointer;
-        z-index: 1;
+        z-index: 5;
     }
 
     /* 팝업창 & 메뉴 */
     .navb {
-        position: absolute;
-        top: 10%;                 /* 중앙 정렬 */
-        left: 2%;
-        transform: translate(0); /* 수평 중앙 정렬 (수직은 고정) */
+        position: sticky;
+        margin-top: -35px;                 /* 중앙 정렬 */
+        margin-left: 1%;
         color: rgb(36, 35, 35);
         font-size: 0vw;           /* 창 너비에 따라 텍스트 크기 조정 */
-
-        z-index: 1;
+        z-index: 5;
     }
     .popup-menu{
         display: none;
         position: fixed;
-        top: 120px;
-        right: 1635px;
-        width: 250px;
+        top: 55px;
+        width: 100%;
         height: 44%;
         font-size: 25px;
         background-color: rgba(255, 255, 255, 0.123);
@@ -131,30 +116,14 @@
         background-color:transparent;
         font-size: 15.5px;
     }
-    .box{
-        position: relative;                        /* relative 로 변경하여 main 아래에 붙이기 */
-        width: 100%;                              /* 창 너비 100% */
-        height: 5.8vh;                           /* 창 높이 5.8% */
-        transform: translate(0);                /* 수평 중앙 정렬 (수직은 고정) */
-        top: 910px;
-        display: flex;                         /* 수평 중앙 및 수직 중앙 정렬을 위한 flexbox */
-        justify-content: center;              /* 수평 중앙 정렬 */
-        align-items: center;                 /* 수직 중앙 정렬 */
-        background: #202020;                /* 배경색 지정 */
-        padding:  0;                        /* 패딩 제거 */
-        overflow: hidden;                 /* 넘치는 콘텐츠 숨기기 */
-        z-index: 1;                      /* 다른 요소보다 위에 배치 */
-        margin: 0;                /* 여백 제거 */
-    }
 
-
-    }
     .conternt-main{
         position: relative;
         width: 100vw;                    /* 컨테이너 너비를 창 너비에 맞춤 */
         max-height: 100vh;               /* 최대 높이를 창 높이로 설정 */
     }
     .logoimg2 {
+        position: sticky;
         width: 100px;
         display: block;
         margin: auto;
@@ -165,20 +134,18 @@
         position: relative;
         box-sizing: border-box;
         position: relative;
-        width: 7%;
-        height: 28px;
+        width: 50%;
+        height: 45px;
         justify-content: center;    /* 수평 중앙 정렬 */
         align-items: center;        /* 수직 중앙 정렬 */
         transform: translate(0);    /* 수평 중앙 정렬 (수직은 고정) */
-        left: 99px;
-        top: 35px;
+        left: 25%;
+        top: 1000px;
         margin: -0;                     /* 여백 제거 */
-        overflow: hidden;               /* 넘치는 콘텐츠 숨기기 */
         background: #ffffff;
         border: 1px solid #505050;
-        border-radius: 10px;
         text-align: center;
-        font-size: 12.5px;
+        font-size: 20px;
         z-index: 4;
     }
     #clothes {
@@ -193,7 +160,7 @@
         display: flex;                 /* flexbox로 설정 */
         flex-direction: column;        /* 세로 방향으로 정렬 */
         align-items: center;           /* 아이템 중앙 정렬 */
-        width: calc(25% - 25px);      /* 한 줄에 4개 배치, 15px는 간격을 고려한 값 */
+        width: calc(25% - 30px);      /* 한 줄에 4개 배치, 15px는 간격을 고려한 값 */
     }
 
     #clothes img {
@@ -204,7 +171,29 @@
         object-fit: cover;             /* 이미지 크기 조절 */
 
     }
+    .fit{
+        font-size: 12px;
+        color: #AFAFAF;
 
+    }
+    a{
+        text-decoration-line: none;
+        color: #242424;
+    }
+    .bottom-piece{
+        width: auto;
+        height: 120px;
+        top: 120px;
+        background-color: black;
+        position: relative;
+        display: flex;
+        justify-content: center;  /* 수평 중앙 정렬 */
+        align-items: flex-start;  /* 상단 정렬 */
+        margin: 0;                /* 여백 제거 */
+        padding: 0;               /* 패딩 제거 */
+        overflow: hidden;         /* 넘치는 콘텐츠 숨기기 */
+        z-index: -1;
+    }
 
 
 
@@ -214,29 +203,27 @@
         <img th:src="@{/images/main-img/main.png}" class="mainimg fade-img" id="slideshow1" alt="슬라이드 이미지">
         <img th:src="@{/images/main-img/main2.png}" class="mainimg fade-img" id="slideshow2" alt="슬라이드 이미지" style="opacity: 0;">
     </div>
-    <div class="box">
+
         <div class="logo2">
             <img th:src="@{/images/main-img/vveloce1.png}" class="logoimg2" alt="두번째 로고 이미지">
         </div>
     </div>
-</div>
 
-<div class="logo">
-    <div class="content-logo">
-        <img th:src="@{/images/main-img/logo 1.png}" class="logoimg" alt="로고이미지">
-    </div>
-</div>
+
 
 <div class="login">
-    <p>lOGIN</p>
+    <form th:action="@{/auth/login}" th:method>
+  <p>LOGIN</p>
+    </form>
 </div>
+
 <div class="Register">
-    <p>REGISTER</p>
+   <a href="register"> <p>REGISTER</p> </a>
 </div>
 
 <!-- 메뉴 팝업창 -->
 <div class="navb">
-    <button id="menu-button"><b>SHOP</b></button>
+    <button id="menu-button"><p>SHOP</p></button>
 </div>
 
 <div class="popup-menu" id="popup-menu">
@@ -249,151 +236,174 @@
 
 
 <form class="searchbox" action="searchbox">
-    <input class="search" type="text" placeholder="검색어를 입력하세요">
+    <input class="search" type="text" placeholder="Search">
 </form>
 
 <div id="clothes">
     <div>
         <img th:src="@{/images/hat/'DV' 볼캡 (beige) H.jpg}" width="200px">
-        <p>'DV' 볼캡 (beige H)</p>
-        <p><s> 62.000원 </s></p>
-        <p> 48.000원 </p>
+        <span>'DV' 볼캡 (beige H)</span>
+        <span class="fit">Hard fit</span>
+        <span><s> 62.000원 </s></span>
+        <h4> 48.000원 </h4>
     </div>
 
     <div>
         <img th:src="@{/images/hat/'DV' 볼캡 (black  R).jpg}" width="200px">
-        <p>'DV' 볼캡 (black R)</p>
-        <p><s> 62.000원 </s></p>
-        <p> 48.000원 </p>
+        <span>'DV' 볼캡 (black R)</span>
+        <span class="fit">Soft fit</span>
+        <span><s> 62.000원 </s></span>
+        <h4> 48.000원 </h4>
     </div>
 
     <div>
         <img th:src="@{/images/hat/'DV' 볼캡 (black  R) H.jpg}" width="200px">
-        <p>'DV' 볼캡 (black R) H</p>
-        <p><s> 62.000원 </s></p>
-        <p> 48.000원 </p>
+        <span>'DV' 볼캡 (black R) H</span>
+        <span class="fit">Hard fit</span>
+        <span><s> 62.000원 </s></span>
+        <h4> 48.000원 </h4>
     </div>
 
     <div>
         <img th:src="@{/images/hat/'DV' 볼캡 (black  W) H.jpg}" width="200px">
-        <p>'DV' 볼캡 (black W) H</p>
-        <p><s> 62.000원 </s></p>
-        <p> 48.000원 </p>
+        <span>'DV' 볼캡 (black W) H</span>
+        <span class="fit">Hard fit</span>
+        <span><s> 62.000원 </s></span>
+        <h4> 48.000원 </h4>
 
     </div>
 
     <div>
         <img th:src="@{/images/hat/'DV' 볼캡 (green).jpg}" width="200px">
-        <p>'DV' 볼캡 (green)</p>
+        <span>'DV' 볼캡 (green)</span>
+        <span class="fit">Soft fit</span>
         <p><s> 62.000원 </s></p>
-        <p>품절</p>
+        <div><img th:src="@{/images/main-img/soldout.jpg}" class="soldout" width="55%" alt="솔드아웃"></div>
     </div>
 
     <div>
         <img th:src="@{/images/hat/'DV' 볼캡 (light denim).jpg}" width="200px">
-        <p>'DV' 볼캡 (light denim)</p>
-        <p><s> 57.000원 </s></p>
-        <p> 46.000원 </p>
+        <span>'DV' 볼캡 (light denim)</span>
+        <span class="fit">Soft fit</span>
+        <span><s> 57.000원 </s></span>
+        <h4> 46.000원 </h4>
     </div>
 
     <div>
         <img th:src="@{/images/hat/'DV' 볼캡 (stitch denim).jpg}" width="200px">
-        <p>'DV' 볼캡 (stitch denim)</p>
-        <p><s> 57.000원 </s></p>
-        <p> 46.000원 </p>
+        <span>'DV' 볼캡 (stitch denim)</span>
+        <span class="fit">Soft fit</span>
+        <span><s> 57.000원 </s></span>
+        <h4> 46.000원 </h4>
     </div>
 
     <div>
         <img th:src="@{/images/hat/'FV' 볼캡 (blue).jpg}" width="200px">
-        <p>'FV' 볼캡 (blue)</p>
+        <span>'FV' 볼캡 (blue)</span>
+        <span class="fit">Soft fit</span>
         <p><s> 57.000원 </s></p>
-            <p> 품절 </p>
+        <div><img th:src="@{/images/main-img/soldout.jpg}" class="soldout" width="55%" alt="솔드아웃"></div>
     </div>
 
     <div>
         <img th:src="@{/images/hat/'FV' 볼캡 (camo) R.jpg}" width="200px">
-        <p>'FV' 볼캡 (camo) R</p>
+        <span>'FV' 볼캡 (camo) R</span>
+        <span class="fit">Soft fit</span>
         <p><s> 57.000원 </s></p>
-        <p> 품절 </p>
+        <div><img th:src="@{/images/main-img/soldout.jpg}"  class="soldout"  width="55px" alt="솔드아웃"></div>
     </div>
 
     <div>
         <img th:src="@{/images/hat/'FV' 볼캡 (camo) W.jpg}" width="200px">
-        <p>'FV' 볼캡 (camo) W</p>
-        <p><s> 57.000원 </s></p>
-        <p> 43.000원 </p>
+        <span>'FV' 볼캡 (camo) W</span>
+        <span class="fit">Soft fit</span>
+        <span><s> 57.000원 </s></span>
+        <h4> 43.000원 </h4>
     </div>
 
     <div>
         <img th:src="@{/images/hat/'FV' 볼캡 (deep orange).jpg}" width="200px">
-        <p>'FV' 볼캡 (deep orange)</p>
-        <p><s> 57.000원 </s></p>
-        <p> 43.000원  </p>
+        <span>'FV' 볼캡 (deep orange)</span>
+        <span class="fit">Soft fit</span>
+        <span><s> 57.000원 </s></span>
+        <h4> 43.000원  </h4>
     </div>
 
     <div>
         <img th:src="@{/images/hat/'KV' 볼캡(green).jpg}" width="200px">
-        <p>'KV' 볼캡 (green)</p>
-        <p><s> 57.000원 </s></p>
-        <p> 43.000원  </p>
+        <span>'KV' 볼캡 (green)</span>
+        <span class="fit">Soft fit</span>
+        <span><s> 57.000원 </s></span>
+        <h4> 43.000원  </h4>
     </div>
 
     <div>
         <img th:src="@{/images/hat/'KV' 볼캡 (light denim).jpg}" width="200px">
-        <p>'KV' 볼캡 (light denim)</p>
-        <p><s> 57.000원 </s></p>
-        <p> 46.000원  </p>
+        <span>'KV' 볼캡 (light denim)</span>
+        <span class="fit">Soft fit</span>
+        <span><s> 57.000원 </s></span>
+        <h4> 46.000원  </h4>
     </div>
 
     <div>
         <img th:src="@{/images/hat/'LT' 볼캡 (beige).jpg}" width="200px">
-        <p>'LT' 볼캡 (beige)</p>
-        <p><s> 57.000원 </s></p>
-        <p> 36.000원  </p>
+        <span>'LT' 볼캡 (beige)</span>
+        <span class="fit">Low fit</span>
+        <span><s> 57.000원 </s></span>
+        <h4> 36.000원  </h4>
     </div>
 
     <div>
         <img th:src="@{/images/hat/'LT' 볼캡 ver.2 (deep orange).jpg}" width="200px">
-        <p>'LT' 볼캡 ver.2 (deep orange)</p>
-        <p><s> 57.000원 </s></p>
-        <p> 43.000원  </p>
+        <span>'LT' 볼캡 ver.2 (deep orange)</span>
+        <span class="fit">Soft fit</span>
+        <span><s> 57.000원 </s></span>
+        <h4> 43.000원  </h4>
     </div>
 
     <div>
         <img th:src="@{/images/hat/'LT' 볼캡 ver.2 (red).jpg}" width="200px">
-        <p>'LT' 볼캡 ver.2 (red)</p>
-        <p><s> 57.000원 </s></p>
-        <p> 43.000원  </p>
+        <span>'LT' 볼캡 ver.2 (red)</span>
+        <span class="fit">Soft fit</span>
+        <span><s> 57.000원 </s></span>
+        <h4> 43.000원  </h4>
     </div>
 
     <div>
         <img th:src="@{/images/hat/'LT' 볼캡 ver.2 (stitch black  W).jpg}" width="200px">
-        <p>'LT' 볼캡 ver.2 (stitch black W)</p>
-        <p><s> 57.000원 </s></p>
-        <p> 43.000원  </p>
+        <span>'LT' 볼캡 ver.2 (stitch black W)</span>
+        <span class="fit">Soft fit</span>
+        <span><s> 57.000원 </s></span>
+        <h4> 43.000원  </h4>
     </div>
 
     <div>
         <img th:src="@{/images/hat/'OV' 볼캡(beige).jpg}" width="200px">
-        <p>'OV' 볼캡 (beige)</p>
+        <span>'OV' 볼캡 (beige)</span>
+        <span class="fit">Soft fit</span>
         <p><s> 57.000원 </s></p>
-        <p> 품절 </p>
+        <div><img th:src="@{/images/main-img/soldout.jpg}"  class="soldout" width="55px" alt="솔드아웃"></div>
     </div>
 
     <div>
         <img th:src="@{/images/hat/'OV' 볼캡(ivory navy).jpg}" width="200px">
-        <p>'OV' 볼캡 (ivory navy)</p>
-        <p><s> 57.000원 </s></p>
-        <p> 44.000원  </p>
+        <span>'OV' 볼캡 (ivory navy)</span>
+        <span class="fit">Soft fit</span>
+        <span><s> 57.000원 </s></span>
+        <h4> 44.000원  </h4>
     </div>
 
     <div>
         <img th:src="@{/images/hat/'OV' 볼캡 (light denim).jpg}" width="200px">
-        <p>'OV' 볼캡 (light denim)</p>
+        <span>'OV' 볼캡 (light denim)</span>
+        <span class="fit">Soft fit</span>
         <p><s> 58.000원 </s></p>
-        <p> 품절 </p>
+        <div><img th:src="@{/images/main-img/soldout.jpg}" class="soldout" width="55px" alt="솔드아웃"></div>
     </div>
 </div>
+
+<div class="bottom-piece"></div>
+
 
 
 
@@ -448,8 +458,20 @@
         slideshowElements[0].style.opacity = 1; // 첫 이미지를 보이게 설정
         setInterval(changeImage, 5000); // 초마다 보이는거
     });
+    $(function () {
+        $(window).scroll(function () { //브라우저에 스크롤이 발생하는 순간부터
+            var curpos = $(window).scrollTop()+20; //스크롤바의 상단 위치값+20 보관
+            $(".box").stop().animate({"top":curpos}); //스카이메뉴의 상단위치값 애니
+        });
+    });
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 0 ){
+        document.querySelector('box').classList.add('active')
+    }else {
+        document.querySelector('box').classList.remove('active')
+    }
+})
 </script>
 
-<!--  관리자 베스트 관리 -->
 </body>
 </html>
