@@ -1,15 +1,29 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/images/main-img/login1.png">
     <title>뷔벨로체</title>
+
 </head>
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
     body {
         margin: 0; /* 전체 여백 제거 */
         padding: 0; /* 전체 패딩 제거 */
-        font-family: Arial, sans-serif; /* 기본 폰트 설정 */
+        font-family: good;
+    @font-face {
+    font-family: 'good';
+    url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+}
+    }
+    img {
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
     }
     .mainimg{
         position: relative;
@@ -22,13 +36,6 @@
         padding: 0;               /* 패딩 제거 */
         overflow: hidden;         /* 넘치는 콘텐츠 숨기기 */
         z-index: -1;
-    }
-    .conternt-main{
-        position: relative;
-        width: 100vw;                    /* 컨테이너 너비를 창 너비에 맞춤 */
-        height: calc(100vw * 10 / 21);   /* 21:10 비율에 맞는 높이 설정 */
-        max-height: 100vh;
-        margin: 0;            /* 최대 높이를 창 높이로 설정 */
     }
     .mainimg {
         width: 100%;
@@ -43,56 +50,24 @@
     .fade-img {
         opacity: 0;
     }
-
-
-    /*.conternt-logo{*/
-    /*    position: relative;*/
-    /*    width: 100vw;                    !* 컨테이너 너비를 창 너비에 맞춤 *!*/
-    /*    max-height: 100vh;               !* 최대 높이를 창 높이로 설정 *!*/
-    /*}*/
-    .logo2{
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-    .login{
-        position: absolute;
-        top: 8px;                 /* 중앙 정렬 */
-        left: 88.8%;
-        transform: translate(0); /* 수평 중앙 정렬 (수직은 고정) */
-        color: rgb(36, 35, 35);
-        font-size: 1vw;           /* 창 너비에 따라 텍스트 크기 조정 */
-        cursor : pointer;
-        z-index: 1;
-
-
-    }
-    .Register{
-        position: absolute;
-        top: 8px;                 /* 중앙 정렬 */
-        left: 93%;
-        transform: translate(0); /* 수평 중앙 정렬 (수직은 고정) */
-        color: rgb(36, 35, 35);
-        font-size: 1vw;           /* 창 너비에 따라 텍스트 크기 조정 */
-        cursor : pointer;
-        z-index: 5;
-    }
-
-    /* 팝업창 & 메뉴 */
+     /*팝업창 & 메뉴*/
     .navb {
-        position: sticky;
-        margin-top: -35px;                 /* 중앙 정렬 */
-        margin-left: 1%;
-        color: rgb(36, 35, 35);
-        font-size: 0vw;           /* 창 너비에 따라 텍스트 크기 조정 */
+        position: absolute;
+        top: -160px;                /* 중앙 정렬 */
+
+        margin-left: 340px;
+        color: #5C5B5B;
+        font-size: 18px;           /* 창 너비에 따라 텍스트 크기 조정 */
         z-index: 5;
+
     }
     .popup-menu{
         display: none;
         position: fixed;
-        top: 55px;
-        width: 100%;
-        height: 44%;
+        top: 80px;
+        left: 160px;
+        width: 100px;
+        height: 35%;
         font-size: 25px;
         background-color: rgba(255, 255, 255, 0.123);
         z-index: 5;
@@ -104,7 +79,7 @@
     }
     .popup-menu a{
         display: block;
-        padding: 10px;
+        padding: 5px;
         color: rgb(0, 0, 0);
         text-decoration: none;
     }
@@ -112,48 +87,20 @@
         background-color: rgba(0, 0, 0, 0.1);
     }
     #menu-button{
+        position: relative;
         border:none;
         background-color:transparent;
-        font-size: 15.5px;
+        font-size: 15px;
+        top: 200px;
+        color: #5C5B5B;
     }
 
-    .conternt-main{
-        position: relative;
-        width: 100vw;                    /* 컨테이너 너비를 창 너비에 맞춤 */
-        max-height: 100vh;               /* 최대 높이를 창 높이로 설정 */
-    }
     .logoimg2 {
-        position: sticky;
+        position: absolute;
         width: 100px;
-        display: block;
-        margin: auto;
-        margin-top: 5px;
-    }
-
-  .search{                           /* 검색창*/
-        position: relative;
-        box-sizing: border-box;
-        position: relative;
-        width: 50%;
-        height: 45px;
-        justify-content: center;    /* 수평 중앙 정렬 */
-        align-items: center;        /* 수직 중앙 정렬 */
-        transform: translate(0);    /* 수평 중앙 정렬 (수직은 고정) */
-        left: 25%;
-        top: 1000px;
-        margin: -0;                     /* 여백 제거 */
-        background: #ffffff;
-        border: 1px solid #505050;
-        text-align: center;
-        font-size: 20px;
-        z-index: 4;
-    }
-    #clothes {
-        display: flex;
-        margin-top: 1100px;
-        flex-wrap: wrap;               /* 여러 줄로 정렬 */
-        justify-content: center;       /* 수평 중앙 정렬 */
-        gap: 15px;                     /* 이미지 간격 */
+        top: 30px;
+        left: 30px;
+        z-index: 5;
     }
 
     #clothes div {
@@ -171,241 +118,81 @@
         object-fit: cover;             /* 이미지 크기 조절 */
 
     }
-    .fit{
-        font-size: 12px;
-        color: #AFAFAF;
-
-    }
     a{
         text-decoration-line: none;
         color: #242424;
     }
-    .bottom-piece{
-        width: auto;
-        height: 120px;
-        top: 120px;
-        background-color: black;
-        position: relative;
-        display: flex;
-        justify-content: center;  /* 수평 중앙 정렬 */
-        align-items: flex-start;  /* 상단 정렬 */
-        margin: 0;                /* 여백 제거 */
-        padding: 0;               /* 패딩 제거 */
-        overflow: hidden;         /* 넘치는 콘텐츠 숨기기 */
-        z-index: -1;
+    .login-text{
+        position: absolute;
+        width: 80px;
+        height: 30px;
+        top: 50px;
+        right: 50px;
+        font-size: 18px;
+        color: #5C5B5B;
+    }
+    .search{                           /* 검색창*/
+        position: absolute;
+        box-sizing: border-box;
+        width: 195px;
+        height: 25px;
+        justify-content: center;    /* 수평 중앙 정렬 */
+        align-items: center;        /* 수직 중앙 정렬 */
+        transform: translate(0);    /* 수평 중앙 정렬 (수직은 고정) */
+        left: 145px;
+        top: 40px;
+        margin: -0;                     /* 여백 제거 */
+        line-height: 100px;
+        background: #ffffff;
+        border: 1px solid #505050;
+        border-radius: 16px;
+        text-align: center;
+        font-size: 14px;
+        z-index: 4;
     }
 
 
-
 </style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+
 <div class="container">
     <div class="main-img">
         <img th:src="@{/images/main-img/main.png}" class="mainimg fade-img" id="slideshow1" alt="슬라이드 이미지">
         <img th:src="@{/images/main-img/main2.png}" class="mainimg fade-img" id="slideshow2" alt="슬라이드 이미지" style="opacity: 0;">
     </div>
 
-        <div class="logo2">
+    <div class="login-text">
+        <a href="auth/login"><b> LOGIN </b></a>
+        <a href="auth/accession"><b>REGISTER</b></a>
+        <a href="auth/mypage"><b>MY PAGE</b></a>
+    </div>
+
+    <!-- 메뉴 팝업창 -->
+    <div class="navb">
+        <button id="menu-button"> <b> SHOP </b></button>
+    </div>
+
+    <div class="popup-menu" id="popup-menu">
+        <h6><a href="page/hat">Hat</a></h6>
+        <h6><a href="page/outerwearcontroller">Outerwear</a></h6>
+        <h6><a href="page/top">Top</a></h6>
+        <h6><form th:action="@{page/bottom}" th:method="post"> <button> Bottoms </button> </form></h6>
+
+    </div>
+    <div>
+        <form class="searchbox" action="searchbox">
+            <input class="search" type="text" placeholder="Search">
+        </form>
+    </div>
+
+<div class="logo2">
             <img th:src="@{/images/main-img/vveloce1.png}" class="logoimg2" alt="두번째 로고 이미지">
         </div>
-    </div>
-
-
-
-<div class="login">
-    <form th:action="@{/auth/login}" th:method>
-  <p>LOGIN</p>
-    </form>
 </div>
-
-<div class="Register">
-   <a href="register"> <p>REGISTER</p> </a>
-</div>
-
-<!-- 메뉴 팝업창 -->
-<div class="navb">
-    <button id="menu-button"><p>SHOP</p></button>
-</div>
-
-<div class="popup-menu" id="popup-menu">
-    <h6><a href="#best">Best</a></h6>
-    <h6><a href="#hat">Hat</a></h6>
-    <h6><a href="#outerwear">Outerwear</a></h6>
-    <h6><a href="#top">Top</a></h6>
-    <h6><a href="#Bottoms">Bottoms</a></h6>
-</div>
-
-
-<form class="searchbox" action="searchbox">
-    <input class="search" type="text" placeholder="Search">
-</form>
-
-<div id="clothes">
-    <div>
-        <img th:src="@{/images/hat/'DV' 볼캡 (beige) H.jpg}" width="200px">
-        <span>'DV' 볼캡 (beige H)</span>
-        <span class="fit">Hard fit</span>
-        <span><s> 62.000원 </s></span>
-        <h4> 48.000원 </h4>
-    </div>
-
-    <div>
-        <img th:src="@{/images/hat/'DV' 볼캡 (black  R).jpg}" width="200px">
-        <span>'DV' 볼캡 (black R)</span>
-        <span class="fit">Soft fit</span>
-        <span><s> 62.000원 </s></span>
-        <h4> 48.000원 </h4>
-    </div>
-
-    <div>
-        <img th:src="@{/images/hat/'DV' 볼캡 (black  R) H.jpg}" width="200px">
-        <span>'DV' 볼캡 (black R) H</span>
-        <span class="fit">Hard fit</span>
-        <span><s> 62.000원 </s></span>
-        <h4> 48.000원 </h4>
-    </div>
-
-    <div>
-        <img th:src="@{/images/hat/'DV' 볼캡 (black  W) H.jpg}" width="200px">
-        <span>'DV' 볼캡 (black W) H</span>
-        <span class="fit">Hard fit</span>
-        <span><s> 62.000원 </s></span>
-        <h4> 48.000원 </h4>
-
-    </div>
-
-    <div>
-        <img th:src="@{/images/hat/'DV' 볼캡 (green).jpg}" width="200px">
-        <span>'DV' 볼캡 (green)</span>
-        <span class="fit">Soft fit</span>
-        <p><s> 62.000원 </s></p>
-        <div><img th:src="@{/images/main-img/soldout.jpg}" class="soldout" width="55%" alt="솔드아웃"></div>
-    </div>
-
-    <div>
-        <img th:src="@{/images/hat/'DV' 볼캡 (light denim).jpg}" width="200px">
-        <span>'DV' 볼캡 (light denim)</span>
-        <span class="fit">Soft fit</span>
-        <span><s> 57.000원 </s></span>
-        <h4> 46.000원 </h4>
-    </div>
-
-    <div>
-        <img th:src="@{/images/hat/'DV' 볼캡 (stitch denim).jpg}" width="200px">
-        <span>'DV' 볼캡 (stitch denim)</span>
-        <span class="fit">Soft fit</span>
-        <span><s> 57.000원 </s></span>
-        <h4> 46.000원 </h4>
-    </div>
-
-    <div>
-        <img th:src="@{/images/hat/'FV' 볼캡 (blue).jpg}" width="200px">
-        <span>'FV' 볼캡 (blue)</span>
-        <span class="fit">Soft fit</span>
-        <p><s> 57.000원 </s></p>
-        <div><img th:src="@{/images/main-img/soldout.jpg}" class="soldout" width="55%" alt="솔드아웃"></div>
-    </div>
-
-    <div>
-        <img th:src="@{/images/hat/'FV' 볼캡 (camo) R.jpg}" width="200px">
-        <span>'FV' 볼캡 (camo) R</span>
-        <span class="fit">Soft fit</span>
-        <p><s> 57.000원 </s></p>
-        <div><img th:src="@{/images/main-img/soldout.jpg}"  class="soldout"  width="55px" alt="솔드아웃"></div>
-    </div>
-
-    <div>
-        <img th:src="@{/images/hat/'FV' 볼캡 (camo) W.jpg}" width="200px">
-        <span>'FV' 볼캡 (camo) W</span>
-        <span class="fit">Soft fit</span>
-        <span><s> 57.000원 </s></span>
-        <h4> 43.000원 </h4>
-    </div>
-
-    <div>
-        <img th:src="@{/images/hat/'FV' 볼캡 (deep orange).jpg}" width="200px">
-        <span>'FV' 볼캡 (deep orange)</span>
-        <span class="fit">Soft fit</span>
-        <span><s> 57.000원 </s></span>
-        <h4> 43.000원  </h4>
-    </div>
-
-    <div>
-        <img th:src="@{/images/hat/'KV' 볼캡(green).jpg}" width="200px">
-        <span>'KV' 볼캡 (green)</span>
-        <span class="fit">Soft fit</span>
-        <span><s> 57.000원 </s></span>
-        <h4> 43.000원  </h4>
-    </div>
-
-    <div>
-        <img th:src="@{/images/hat/'KV' 볼캡 (light denim).jpg}" width="200px">
-        <span>'KV' 볼캡 (light denim)</span>
-        <span class="fit">Soft fit</span>
-        <span><s> 57.000원 </s></span>
-        <h4> 46.000원  </h4>
-    </div>
-
-    <div>
-        <img th:src="@{/images/hat/'LT' 볼캡 (beige).jpg}" width="200px">
-        <span>'LT' 볼캡 (beige)</span>
-        <span class="fit">Low fit</span>
-        <span><s> 57.000원 </s></span>
-        <h4> 36.000원  </h4>
-    </div>
-
-    <div>
-        <img th:src="@{/images/hat/'LT' 볼캡 ver.2 (deep orange).jpg}" width="200px">
-        <span>'LT' 볼캡 ver.2 (deep orange)</span>
-        <span class="fit">Soft fit</span>
-        <span><s> 57.000원 </s></span>
-        <h4> 43.000원  </h4>
-    </div>
-
-    <div>
-        <img th:src="@{/images/hat/'LT' 볼캡 ver.2 (red).jpg}" width="200px">
-        <span>'LT' 볼캡 ver.2 (red)</span>
-        <span class="fit">Soft fit</span>
-        <span><s> 57.000원 </s></span>
-        <h4> 43.000원  </h4>
-    </div>
-
-    <div>
-        <img th:src="@{/images/hat/'LT' 볼캡 ver.2 (stitch black  W).jpg}" width="200px">
-        <span>'LT' 볼캡 ver.2 (stitch black W)</span>
-        <span class="fit">Soft fit</span>
-        <span><s> 57.000원 </s></span>
-        <h4> 43.000원  </h4>
-    </div>
-
-    <div>
-        <img th:src="@{/images/hat/'OV' 볼캡(beige).jpg}" width="200px">
-        <span>'OV' 볼캡 (beige)</span>
-        <span class="fit">Soft fit</span>
-        <p><s> 57.000원 </s></p>
-        <div><img th:src="@{/images/main-img/soldout.jpg}"  class="soldout" width="55px" alt="솔드아웃"></div>
-    </div>
-
-    <div>
-        <img th:src="@{/images/hat/'OV' 볼캡(ivory navy).jpg}" width="200px">
-        <span>'OV' 볼캡 (ivory navy)</span>
-        <span class="fit">Soft fit</span>
-        <span><s> 57.000원 </s></span>
-        <h4> 44.000원  </h4>
-    </div>
-
-    <div>
-        <img th:src="@{/images/hat/'OV' 볼캡 (light denim).jpg}" width="200px">
-        <span>'OV' 볼캡 (light denim)</span>
-        <span class="fit">Soft fit</span>
-        <p><s> 58.000원 </s></p>
-        <div><img th:src="@{/images/main-img/soldout.jpg}" class="soldout" width="55px" alt="솔드아웃"></div>
-    </div>
-</div>
-
-<div class="bottom-piece"></div>
-
-
-
 
 
 
@@ -426,7 +213,7 @@
             popupMenu.classList.remove('show'); // 메뉴 닫기
         }
     });
-    // ------------------------------- 메인 이미지 전환
+
     const images = [
         'images/main-img/main.png',
         'images/main-img/main2.png',
@@ -464,13 +251,7 @@
             $(".box").stop().animate({"top":curpos}); //스카이메뉴의 상단위치값 애니
         });
     });
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 0 ){
-        document.querySelector('box').classList.add('active')
-    }else {
-        document.querySelector('box').classList.remove('active')
-    }
-})
+
 </script>
 
 </body>
